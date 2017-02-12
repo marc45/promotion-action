@@ -2,7 +2,7 @@ package com.jd.jr.multi;
 
 /**
  * Created by shifeifei on 2017/2/11.
- * Ïß³Ì°²È«ÎÊÌâ
+ * çº¿ç¨‹å®‰å…¨é—®é¢˜
  */
 public class TraditionThreadSync {
     private static TraditionThreadSync sync = new TraditionThreadSync();
@@ -30,8 +30,8 @@ public class TraditionThreadSync {
         new Thread(new Runnable() {
             public void run() {
                 while (true) {
-                    printer.print1("guojiangjiang");//´ËÊ±print()ºÍprint1()·½·¨Í¬²½
-                    //new Printer().print1("guojiangjiang");//´ËÊ±print()ºÍprint1()·½·¨²»Í¬²½
+                    printer.print1("guojiangjiang");//print()å’Œprint1()æ–¹æ³•æ˜¯åŒæ­¥çš„
+                    //new Printer().print1("guojiangjiang");//print()å’Œprint1()æ–¹æ³•ä¸åŒæ­¥
                     try {
                         Thread.sleep(10);
                     } catch (InterruptedException e) {
@@ -42,10 +42,9 @@ public class TraditionThreadSync {
         }).start();
     }
 
-    //¶à¸öÏß³Ì·ÃÎÊ¸ÃPrinterÀàµÄprint·½·¨£¬»á³öÏÖÏß³Ì°²È«ÎÊÌâ
     static class Printer {
         public void print(String name) {
-            synchronized (this) {//Èç¹ûÏëÈÃprint()ºÍprint3()·½·¨Í¬²½£¬ĞŞ¸Ä³Ésynchronized(Printer.class)
+            synchronized (this) {//è¦ä½¿print()å’Œprint2()æ–¹æ³•åŒæ­¥,synchronized(Printer.class)æ‰èµ·ä½œç”¨
                 for (int i = 0; i < name.length(); i++) {
                     System.out.print(name.charAt(i));
                 }
@@ -60,7 +59,7 @@ public class TraditionThreadSync {
             System.out.println();
         }
 
-        //¾²Ì¬·½·¨²»ĞèÒª´´½¨¸ÃÀàµÄ¶ÔÏó¾Í¿ÉÒÔµ÷ÓÃ£¬µ«ÊÇËüÒ»¶¨»áÓÃµ½¸ÃÀàµÄ×Ö½ÚÂë¶ÔÏó£¬ÒòÎªÀàµÄ×Ö½ÚÂë»á¼ÓÔØµ½ÄÚ´æÖĞ
+        //é™æ€æ–¹æ³•ä¸éœ€è¦ä»»ä½•å¯¹è±¡å°±å¯ä»¥ç›´æ¥è°ƒç”¨ï¼Œä½†å®ƒéœ€è¦å­—èŠ‚ç å¯¹è±¡
         public static synchronized void print2(String name) {
             for (int i = 0; i < name.length(); i++) {
                 System.out.print(name.charAt(i));
