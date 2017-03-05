@@ -43,6 +43,7 @@ public class TraditionThreadSync {
     }
 
     static class Printer {
+
         public void print(String name) {
             synchronized (this) {//要使print()和print2()方法同步,synchronized(Printer.class)才起作用
                 for (int i = 0; i < name.length(); i++) {

@@ -22,7 +22,6 @@ public class BaseThread {
         };
         thread.start();
 
-        //实现Runnable接口
         Thread thread1 = new Thread(new Runnable() {
             public void run() {
                 while (true) {
@@ -37,7 +36,7 @@ public class BaseThread {
         });
         thread1.start();
 
-        //匿名内部类
+
         new Thread(){
             @Override
             public void run() {
