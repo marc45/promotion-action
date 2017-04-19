@@ -2,12 +2,15 @@ package com.jd.jr.multi;
 
 /**
  * Created by shifeifei on 2017/2/11.
- * 子线程执行10，主线程100次，如此交替执行，各执行50次
+ * 子线程执行10次，主线程100次，如此交替执行，如此循环50次
+ *
+ * 如何实现：
+ *      1.保证主线程和子线程互斥
+ *      2.子线程和主线通信
  */
 public class ThreadCommunication {
 
     public static void main(String[] args) {
-
         ThreadCommunication t = new ThreadCommunication();
         final Business b = t.new Business();
 
