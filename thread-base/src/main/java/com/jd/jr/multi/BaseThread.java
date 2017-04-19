@@ -23,6 +23,7 @@ public class BaseThread {
         thread.start();
 
         Thread thread1 = new Thread(new Runnable() {
+
             public void run() {
                 while (true) {
                     try {
@@ -33,6 +34,7 @@ public class BaseThread {
                     System.out.println("---->" + Thread.currentThread().getName());
                 }
             }
+
         });
         thread1.start();
 
