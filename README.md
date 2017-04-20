@@ -1,2 +1,2 @@
-# multi-thread
-多线程学习
+# jr-action
+实战学习
