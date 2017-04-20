@@ -1,4 +1,4 @@
-package com.jd.jr.multi;
+package com.jd.jr.autowire;
 
 /**
  * Created by shifeifei on 2017/2/11.

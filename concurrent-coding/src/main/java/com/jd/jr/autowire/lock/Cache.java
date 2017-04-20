@@ -1,4 +1,4 @@
-package com.jd.jr.multi.lock;
+package com.jd.jr.autowire.lock;
 
 import java.util.HashMap;
 import java.util.Map;

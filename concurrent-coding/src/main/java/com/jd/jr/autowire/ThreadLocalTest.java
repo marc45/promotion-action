@@ -1,7 +1,5 @@
-package com.jd.jr.multi;
+package com.jd.jr.autowire;
 
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Random;
 
 /**

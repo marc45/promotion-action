@@ -1,4 +1,4 @@
-package com.jd.jr.multi.lock;
+package com.jd.jr.autowire.lock;
 
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;

@@ -1,4 +1,4 @@
-package com.jd.jr.multi;
+package com.jd.jr.autowire;
 
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;

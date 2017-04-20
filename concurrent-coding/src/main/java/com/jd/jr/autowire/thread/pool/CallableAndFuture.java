@@ -1,4 +1,4 @@
-package com.jd.jr.multi.thread.pool;
+package com.jd.jr.autowire.thread.pool;
 
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutorService;
