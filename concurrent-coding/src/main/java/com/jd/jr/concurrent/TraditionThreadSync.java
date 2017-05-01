@@ -1,4 +1,4 @@
-package com.jd.jr.autowire;
+package com.jd.jr.concurrent;
 
 /**
  * Created by shifeifei on 2017/2/11.

@@ -1,4 +1,4 @@
-package com.jd.jr.autowire;
+package com.jd.jr.concurrent;
 
 import java.util.HashMap;
 import java.util.Map;

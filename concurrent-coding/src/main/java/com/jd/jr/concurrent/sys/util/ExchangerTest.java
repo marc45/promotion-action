@@ -1,4 +1,4 @@
-package com.jd.jr.autowire.sys.util;
+package com.jd.jr.concurrent.sys.util;
 
 import java.util.concurrent.Exchanger;
 import java.util.concurrent.ExecutorService;
