@@ -12,6 +12,7 @@
         <module>concurrent-coding</module>
         <module>spring-action</module>
         <module>basic-point</module>
+        <module>jms-mq</module>
     </modules>
 
 
