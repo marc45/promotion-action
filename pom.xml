@@ -13,6 +13,7 @@
         <module>spring-action</module>
         <module>basic-point</module>
         <module>jms-mq</module>
+        <module>design-pattern</module>
     </modules>
 
 
