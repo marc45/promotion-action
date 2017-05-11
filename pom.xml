@@ -160,5 +160,18 @@
         </dependencies>
     </dependencyManagement>
 
+    <!--自动部署JAR-->
+    <distributionManagement>
+        <repository>
+            <id>releases</id>
+            <name>Nexus Release Repository</name>
+            <url>http://mvnrepository.com/libs-releases-local</url>
+        </repository>
+        <snapshotRepository>
+            <id>snapshots</id>
+            <name>Nexus Snapshot Repository</name>
+            <url>http://mvnrepository.com/libs-snapshots-local</url>
+        </snapshotRepository>
+    </distributionManagement>
 
 </project>
