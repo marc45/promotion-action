@@ -1,0 +1,38 @@
+一.zookeeper的安装和配置(集群模式)
+    1.在一台机器上模拟安装3个zookeeper集群安装
+    下载zookeeper的安装包，解压安装到三个不同的目录下
+
+    2.配置文件设置
+        a.在每个zookeeper server配置文件的dataDir所对应的目录下创建myid文件，
+    三个server的myid文件内容有如下要求：
+        server1机器的内容为1；server2的内容为2；server3的内容为3;这里的1,2,3对应
+    的zoo.cfg中的server.1;server.2;server.3中的数字
+
+        b.在conf目录下创建一个配置文件zoo.cfg，其内容如下所示：
+
+        tickTime=2000
+        dataDir=/Users/shifeifei/zookeeper/data
+        dataLogDir=/Users/shifeifei/zookeeper/dataLog
+        clientPort=2181
+
+        initLimit=5
+        syncLimit=2
+        server.1=localhost:2888:3887
+        server.2=localhost:2888:3888
+        server.3=localhost:2888:3889
+
+        注释：
+        (1)tickTime:发送心跳的时间间隔，单位毫秒
+        (2)dataDir:zookeeper保存数据的目录
+        (3)clientPort:客户端连接zookeeper服务器的端口，zookeeper会监听这个端口，接受客户端请求
+        (4)initLimit:这个配置项是用来配置zookeeper接受客户端(这里所说的客户端不是用户连接zookeeper的客户端，
+        而是zookeeper服务器集群中连接到leader的follower服务器)初始化连接是最长能忍受多少个心跳的时间间隔数。
+        当已经超过5个心跳的时间(也就是tickTime)长度后zookeeper服务器还没收到客户端的返回信息，那么表示这个客户端
+        连接失败，总时间长度为：5*2000=10s
+        (5)syncLimit:这个配置表示leader和follower之间发送消息，请求和应答时间长度，最长不能超过多少个tickTime的
+        时间长度，总时间长度就是2*2000=4s
+        (6)server.A=B:C:D，其中A是一个数字，表示第几号服务器；B表示这个服务器的IP；C表示这个服务器与集群中的leader
+        服务器交换信息的端口；D表示的是万一集群中的leader服务器挂了，需要一个端口重新进行选举，选出一个新的leader，
+        而这个端口就是用来执行选举是服务器相互通信的端口。如果是伪集群的配置方式，由于B都是一样的，所以不同的zookeeper
+        实例通信端口号必须不同。
+

@@ -17,6 +17,7 @@
         <module>jms-mq</module>
         <module>design-pattern</module>
         <module>python-action</module>
+        <module>zookeeper</module>
     </modules>
 
     <properties>
