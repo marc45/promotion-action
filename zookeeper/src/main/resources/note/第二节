@@ -8,7 +8,7 @@
         server1机器的内容为1；server2的内容为2；server3的内容为3;这里的1,2,3对应
     的zoo.cfg中的server.1;server.2;server.3中的数字
 
-        b.在conf目录下创建一个配置文件zoo.cfg，其内容如下所示：
+        b.在每个server的conf目录下创建一个配置文件zoo.cfg，其内容如下所示：
 
         tickTime=2000
         dataDir=/Users/shifeifei/zookeeper/data
@@ -35,4 +35,10 @@
         服务器交换信息的端口；D表示的是万一集群中的leader服务器挂了，需要一个端口重新进行选举，选出一个新的leader，
         而这个端口就是用来执行选举是服务器相互通信的端口。如果是伪集群的配置方式，由于B都是一样的，所以不同的zookeeper
         实例通信端口号必须不同。
+
+        bin/zkServer.sh start启动zookeeper
+
+        jps查看进程
+
+        参考博客：http://blog.csdn.net/huwei2003/article/details/49101269
 
