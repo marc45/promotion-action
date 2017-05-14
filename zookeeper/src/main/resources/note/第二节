@@ -17,9 +17,9 @@
 
         initLimit=5
         syncLimit=2
-        server.1=localhost:2888:3887
+        server.1=localhost:2887:3887
         server.2=localhost:2888:3888
-        server.3=localhost:2888:3889
+        server.3=localhost:2887:3889
 
         注释：
         (1)tickTime:发送心跳的时间间隔，单位毫秒
@@ -36,7 +36,8 @@
         而这个端口就是用来执行选举是服务器相互通信的端口。如果是伪集群的配置方式，由于B都是一样的，所以不同的zookeeper
         实例通信端口号必须不同。
 
-        bin/zkServer.sh start启动zookeeper
+        ./bin/zkServer.sh start   启动zookeeper
+        ./bin/zkServer.sh status  查看角色
 
         jps查看进程
 
