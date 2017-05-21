@@ -25,3 +25,20 @@ Zab协议有两种模式，他们分别是恢复模式(选举)和广播模式(�
 三.半数通过，所以搭建集群一般都是搭奇数台(容错；防止脑裂，5台机器即：3和2，1和4)
     3台机器挂一台， 2 > 3/2
     4台机器挂一台， 2 !> 4/2
+
+    更新操作要保证超过半数的都是成功的
+
+四、Follower的主要功能
+    1.向Leader发送请求(ping消息，request消息，ack消息，revalidated消息)
+    2.接受Leader消息并进行处理
+    3.接受Client请求，如果为写请求，发送给Leader投票
+    4.返回Client结果
+
+    Follower的消息循环处理如下接种来自Leader的消息
+    1.ping消息：心跳消息
+    2.proposal消息：Leader发起提案，要求Follower投票
+    3.commit消息：服务端最新一次提案信息
+    4.uptodate消息：表明同步完成
+    5.revalidate消息：根据Leader的revalidate结果，关闭revalidate的session，还是运行接受消息
+    6.sync消息：返回sync结果到客户端，这个消息最初由客户端发起，用来强制得到最新更新
+

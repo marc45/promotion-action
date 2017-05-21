@@ -1,0 +1,21 @@
+一、zookeeper的数据模型
+    1.层次化的目录结构，命名符合常规文件系统规范
+    2.每个节点在zookeeper中叫znode，并且有一个唯一的路径标识
+    3.节点znode可以包含数据和子节点，但是ephemeral类型节点不能有子节点
+    4.znode中的数据可以有多个版本，比如某一个路径下存有多个数据版本，那么查询这个路径下的数据就需要带上版本号
+    5.客户端应用可以在节点上设置监视器
+    6.节点不支持部分读写，而是一次性完整读写
+
+
+二、zookeeper的节点
+    1.znode的有两种类型，短暂的(ephemeral)和持久的(persistent)
+    2.zonde的类型在创建时确定并且之后不能再修改
+    3.短暂znode的客户端会话结束时，zookeeper会将该短暂znode删除，短暂znode不可以有子节点
+    4.持久zonde不依赖于客户端会话，只有当客户端明确要删除该持久znode时才会被删除
+    5.znode有四种形式的目录节点：
+        a.persistent
+        b.ephemeral
+        c.persistent_sequential
+        d.ephemeral_sequential
+
+        创建ephemeral节点：create -e /eph，临时的能存活多久，退出客户端就没了
