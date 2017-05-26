@@ -1,8 +1,10 @@
 package com.jd.jr.zk.server;
 
+import com.alibaba.fastjson.JSON;
 import com.jd.jr.zk.common.Constant;
 import org.apache.commons.lang.StringUtils;
 import org.apache.zookeeper.*;
+import org.apache.zookeeper.data.Stat;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -36,6 +38,7 @@ public class ZKProvider {
         if (StringUtils.isNotBlank(url)) {
             /*连接zookeeper服务器，并获取zookeeper对象*/
             ZooKeeper zk = connectServer();
+            logger.info("是否连接上zk=" + JSON.toJSONString(zk));
             if (null != zk) {
                 /*创建ZNode节点，并将RMI地址放入ZNode上*/
                 createdNode(zk, url);
@@ -53,10 +56,13 @@ public class ZKProvider {
     private void createdNode(ZooKeeper zk, String url) {
         byte[] data = url.getBytes();
         try {
-            //创建一个临时有序znode节点
-            String path = zk.create(Constant.ZK_PROVIDER_PATH, data,
-                    ZooDefs.Ids.OPEN_ACL_UNSAFE, CreateMode.EPHEMERAL_SEQUENTIAL);
-            logger.info("create zookeeper node ({} ==> {})", path, url);
+            Stat stat = zk.exists(Constant.ZK_PROVIDER_PATH, false);
+            if (null == stat) {
+                //创建一个临时有序znode节点
+                String path = zk.create(Constant.ZK_PROVIDER_PATH, data,
+                        ZooDefs.Ids.OPEN_ACL_UNSAFE, CreateMode.EPHEMERAL_SEQUENTIAL);
+                logger.info("创建节点,create zookeeper node ({} ==> {})", path, url);
+            }
         } catch (Exception e) {
             logger.error("", e);
         }
@@ -89,12 +95,12 @@ public class ZKProvider {
     private String publishService(Remote remote, String host, int port) {
         String url = null;
         url = String.format("rmi://%s:%d/%s", host, port, remote.getClass().getName());
-        logger.debug(url+",----");
+        logger.debug("注册地址：" + url);
         try {
             LocateRegistry.createRegistry(port);
             Naming.bind(url, remote);
 
-            logger.info("publish rmi service (url: {}),", url);
+            logger.debug("publish rmi service (url: {}),", url);
         } catch (Exception e) {
             logger.error("发布服务异常", e);
         }

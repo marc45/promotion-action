@@ -11,8 +11,8 @@ public class ZKTest {
 
     public static void main(String[] args) throws Exception {
 
-        String host = "192.168.1.104";
-        int port = 11238;
+        String host = "10.13.24.4";
+        int port = 11237;
 
         ZKProvider provider = new ZKProvider();
 
