@@ -16,7 +16,7 @@
         <module>basic-point</module>
         <module>jms-mq</module>
         <module>design-pattern</module>
-        <module>python-action</module>
+        <module>admin-action</module>
         <module>zookeeper</module>
     </modules>
 
