@@ -1,4 +1,4 @@
-package com.jd.jr.data.struct;
+package com.jd.jr.data.struct.link.list;
 
 import java.util.Arrays;
 
