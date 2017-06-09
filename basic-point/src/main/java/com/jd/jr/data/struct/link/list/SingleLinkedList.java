@@ -20,6 +20,19 @@ public class SingleLinkedList {
         header = new Node<String>();
     }
 
+    //定义链表节点
+    private static class Node<E> {
+        private E data;         //节点元素
+        private Node<E> next;   //指向下一个节点元素指针
+
+        public Node() {
+        }
+
+        public Node(E data) {
+            this.data = data;
+        }
+    }
+
     /**
      * 单链表表尾添加元素
      *
@@ -97,19 +110,6 @@ public class SingleLinkedList {
         while (null != temp.next) {
             temp = temp.next;
             System.out.println("当前节点元素: " + temp.data);
-        }
-    }
-
-    //定义链表节点
-    private static class Node<E> {
-        private E data;         //节点元素
-        private Node<E> next;   //指向下一个节点元素指针
-
-        public Node() {
-        }
-
-        public Node(E data) {
-            this.data = data;
         }
     }
 
