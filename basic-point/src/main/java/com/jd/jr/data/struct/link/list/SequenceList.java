@@ -71,7 +71,7 @@ public class SequenceList {
 
         //原数组扩容一个长度
         data = Arrays.copyOf(data, data.length + 1);
-        //复制数组元素，相当于从index下标向后移动
+        //复制数组元素: 相当于从srcPos开始的length长度元素复制到desPos位置开始
         System.arraycopy(data, index, data, index + 1, size - index);
         data[index] = o;
 
