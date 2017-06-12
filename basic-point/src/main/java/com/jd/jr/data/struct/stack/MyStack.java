@@ -13,23 +13,14 @@ public class MyStack<T> {
         elementData = new Object[]{};
     }
 
-    /**
-     * 入栈
-     *
-     * @param e
-     * @return
-     */
+    //入栈
     public T push(T e) {
         int len = capacity();
         elementData[len - 1] = e;
         return e;
     }
 
-    /**
-     * 出栈
-     *
-     * @return
-     */
+    //出栈
     public T pop() {
         int len = size();
         if (len == 0) {
@@ -40,8 +31,8 @@ public class MyStack<T> {
         if (index < 0) {
             throw new RuntimeException("空栈");
         }
-        T e = (T) elementData[index];
 
+        T e = (T) elementData[index];
         Object[] newElements = new Object[index];
         for (int i = 0; i < index; i++) {
             newElements[i] = elementData[i];
