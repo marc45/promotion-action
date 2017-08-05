@@ -11,7 +11,7 @@
     <packaging>war</packaging>
 
     <name>zookeeper</name>
-    <artifactId>zookeeper</artifactId>
+    <artifactId>zookeeper-action</artifactId>
 
 
     <dependencies>

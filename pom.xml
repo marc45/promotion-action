@@ -17,6 +17,7 @@
         <module>mq-action</module>
         <module>patterns-action</module>
         <module>zookeeper-action</module>
+        <module>guava-action</module>
     </modules>
 
     <properties>
