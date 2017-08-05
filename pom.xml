@@ -5,18 +5,18 @@
 
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>jr-action</groupId>
-    <artifactId>jr-action</artifactId>
+    <groupId>java-action</groupId>
+    <artifactId>java-action</artifactId>
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
 
     <modules>
-        <module>concurrent-coding</module>
+        <module>concurrent-action</module>
         <module>spring-action</module>
-        <module>basic-point</module>
-        <module>jms-mq</module>
-        <module>design-pattern</module>
-        <module>zookeeper</module>
+        <module>java-basic-action</module>
+        <module>mq-action</module>
+        <module>patterns-action</module>
+        <module>zookeeper-action</module>
     </modules>
 
     <properties>
