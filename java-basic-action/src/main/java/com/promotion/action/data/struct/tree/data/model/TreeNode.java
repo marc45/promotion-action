@@ -3,13 +3,13 @@ package com.promotion.action.data.struct.tree.data.model;
 /**
  * 二叉树：二叉链表法
  */
-public class BinaryNode<T> {
+public class TreeNode<T> {
 
     T data;
 
     /*左孩子指针域*/
-    BinaryNode<T> left;
+    TreeNode<T> left;
 
     /*右孩子指针域*/
-    BinaryNode<T> right;
+    TreeNode<T> right;
 }
