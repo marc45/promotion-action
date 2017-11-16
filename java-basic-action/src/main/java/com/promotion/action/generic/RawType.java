@@ -2,7 +2,9 @@ package com.promotion.action.generic;
 
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 /**
  * 原生类型：新生代码中不要使用原生类型；每个泛型都会定一个原生类型；
@@ -14,6 +16,7 @@ public class RawType {
         List<String> stringList = new ArrayList<String>();
         add(stringList, new Integer(9));
         System.out.println(stringList.get(0)); //java.lang.ClassCastException
+
     }
 
 
