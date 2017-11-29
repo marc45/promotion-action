@@ -20,7 +20,7 @@ public class TestClient {
         //通知观察者
         orderSubject.notify("订单支付完成,请开始配送货物");
 
-        orderSubject.delete(c2);
+       // orderSubject.delete(c2);
 
     }
 }

@@ -8,9 +8,9 @@ import java.util.List;
 
 /**
  * Created by shifeifei on 2017/5/2.
- * 订单被观察者
+ * 订单被观察者,具体目标
  */
-public class OrderSubject implements Subject {
+public class OrderSubject extends Subject {
 
     private List<Observer> observers = new ArrayList<Observer>();
 
