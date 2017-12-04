@@ -2,32 +2,28 @@ package com.promotion.action.data.struct.tree;
 
 
 /**
- * 二叉树
+ * 二叉树的二叉链表表示法
  */
 public class BinaryTree {
 
-
-    public void createdTree() {
-
-
-    }
-
-
-    /**
-     * 二叉树的二叉链表表示法
-     *
-     * @param <T>
-     */
-    public static class TreeNode<T> {
-
+    public static class BinaryNode<T extends Comparable> {
         T data;
-
         /*左孩子指针域*/
-        TreeNode<T> left;
-
+        BinaryNode<T> lchild;
         /*右孩子指针域*/
-        TreeNode<T> right;
+        BinaryNode<T> rchild;
+
+        public BinaryNode(T data) {
+            this(data, null, null);
+        }
+
+        public BinaryNode(T data, BinaryNode<T> lchild, BinaryNode<T> rchild) {
+            this.data = data;
+            this.lchild = lchild;
+            this.rchild = rchild;
+        }
     }
-
-
 }
+
+
+
