@@ -1,6 +1,7 @@
 package com.promotion.action.nio;
 
 import java.io.File;
+import java.io.IOException;
 import java.io.RandomAccessFile;
 import java.nio.ByteBuffer;
 import java.nio.channels.FileChannel;
@@ -10,9 +11,23 @@ public class FileChannelTest {
     public static void main(String[] args) throws Exception {
         FileChannelTest test = new FileChannelTest();
         //test.read();
-        test.testFile();
+        //test.testFile();
+        demoRandomAccessFile();
     }
 
+
+    public static void demoRandomAccessFile() throws IOException {
+        File file = new File("demo.txt");
+        RandomAccessFile accessFile = new RandomAccessFile(file, "rw");
+        byte[] bytes = new byte[100];
+
+        int i = 0;
+        while (-1 != (i = accessFile.read(bytes))) {
+            System.out.println(new String(bytes, 0, i));
+        }
+        accessFile.close();
+
+    }
 
     public void testFile() throws Exception {
         File file = new File(this.getClass().getResource("/").getPath() + "\\nio-data_0.txt");
