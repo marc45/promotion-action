@@ -16,6 +16,8 @@ public class BTest {
         System.out.println(bst.printTree());
 
 
+        System.out.println(bst.search(9).data);
+
     }
 
 }

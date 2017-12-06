@@ -28,9 +28,30 @@ public class BinarySortTree<T extends Comparable<T>> {
         return t;
     }
 
+
+    public BinarySortNode<T> search(T data) {
+        return search(root, data);
+    }
+    private BinarySortNode<T> search(BinarySortNode<T> t, T data) {
+        if (null == root) {
+            return null;
+        }
+        int result = data.compareTo(t.data);
+        if (0 == result) {
+            return t;
+        } else if (result < 0) {
+            //递归左子树
+            return search(t.lchild, data);
+        } else {
+            return search(t.rchild, data);
+        }
+    }
+
+
     public String printTree() {
         return postOrder(root);
     }
+
     //中根遍历
     private String postOrder(BinarySortNode<T> t) {
         StringBuffer buffer = new StringBuffer();
