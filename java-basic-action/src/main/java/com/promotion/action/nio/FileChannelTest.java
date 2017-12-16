@@ -12,7 +12,31 @@ public class FileChannelTest {
         FileChannelTest test = new FileChannelTest();
         //test.read();
         //test.testFile();
-        demoRandomAccessFile();
+        //demoRandomAccessFile();
+
+        testBuffer();
+    }
+
+
+    public static void testBuffer() throws Exception {
+        RandomAccessFile file = new RandomAccessFile(new File("demo.txt"), "rw");
+        FileChannel channel = file.getChannel();
+
+        ByteBuffer byteBuffer = ByteBuffer.allocate(48);//分配字节缓存区
+        int bytesRead = channel.read(byteBuffer);
+
+        while (-1 != bytesRead) {
+            byteBuffer.flip();//把Buffers从写模式调整为读模式
+
+            while (byteBuffer.hasRemaining()) {
+                System.out.print((char) byteBuffer.get());
+
+            }
+
+            byteBuffer.clear();
+            bytesRead = channel.read(byteBuffer);
+        }
+        file.close();
     }
 
 
