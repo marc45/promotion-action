@@ -1,6 +1,6 @@
 package com.promotion.action.pattern.proxy.quiet;
 
-public class TestApp {
+public class Client {
 
     public static void main(String[] args) {
 
@@ -12,3 +12,4 @@ public class TestApp {
 
     }
 }
+

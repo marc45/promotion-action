@@ -35,6 +35,9 @@ public class ProxyFactory implements MethodInterceptor {
     }
 
     public Object intercept(Object o, Method method, Object[] objects, MethodProxy methodProxy) throws Throwable {
+        //执行目标方法
         return method.invoke(target, objects);
     }
 }
+
+

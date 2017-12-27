@@ -9,3 +9,5 @@ public class RealRailwayTicket implements RailwayTicket {
         System.out.println("购买火车票");
     }
 }
+
+

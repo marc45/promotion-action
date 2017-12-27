@@ -4,7 +4,7 @@ import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
 
-public class RailwayTicketProxy implements InvocationHandler {
+public class ProxyRailwayTicket implements InvocationHandler {
 
     //保存真实业务对象
     private Object target;

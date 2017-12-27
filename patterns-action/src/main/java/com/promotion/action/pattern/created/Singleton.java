@@ -1,12 +1,15 @@
 package com.promotion.action.pattern.created;
 
 /**
- * 饿汉式
+ * 双重校验锁
  */
 public class Singleton {
+
     private volatile static Singleton singleton = null;
+
     private Singleton() {
     }
+
     //对外提供公用的静态方法
     public static Singleton getSingleton() {
         if (null == singleton) {
@@ -19,3 +22,5 @@ public class Singleton {
         return singleton;
     }
 }
+
+

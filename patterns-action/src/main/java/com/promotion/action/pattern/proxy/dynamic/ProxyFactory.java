@@ -5,9 +5,8 @@ import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
 
 /**
- * 创建动态代理对象
+ * 创建动态代理对象；动态代理不需要实现接口，但需要指定接口类型
  * 匿名内部类实现 ： InvocationHandler接口
- * 学习博客：https://www.cnblogs.com/cenyu/p/6289209.html
  */
 public class ProxyFactory {
 
@@ -18,6 +17,7 @@ public class ProxyFactory {
         this.target = target;
     }
 
+    //生成代理对象
     public Object getProxy() {
 
         Object proxy = Proxy.newProxyInstance(
@@ -33,5 +33,7 @@ public class ProxyFactory {
                 });
         return proxy;
     }
-
 }
+
+
+
