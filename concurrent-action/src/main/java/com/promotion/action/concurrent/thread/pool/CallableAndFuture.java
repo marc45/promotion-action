@@ -13,7 +13,9 @@ public class CallableAndFuture {
     public static void main(String[] args) {
 
         ExecutorService threadPool = Executors.newSingleThreadExecutor();
+
         Future<String> future = threadPool.submit(new Callable<String>() {
+
             public String call() throws Exception {
                 Thread.sleep(100);
                 return "hello";
@@ -25,8 +27,6 @@ public class CallableAndFuture {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
         threadPool.shutdown();
-
     }
 }
